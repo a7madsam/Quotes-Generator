@@ -13,7 +13,7 @@ async function getQuote() {
         const responce = await fetch(apiUrl);
         const data = await responce.json();
         console.log(data);
-        if (data.author.length) {
+        if (data.author.length === 0) {
             author.innerText = "Unknown";
         } else {
             author.innerText = data.quoteAuthor;
