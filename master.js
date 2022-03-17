@@ -13,12 +13,12 @@ async function getQuote() {
         const responce = await fetch(apiUrl);
         const data = await responce.json();
         console.log(data);
-        if (data.author === '') {
+        if (data.author.length) {
             author.innerText = "Unknown";
         } else {
             author.innerText = data.quoteAuthor;
         }
-        if (data.quoteText.lenght >= 150) {
+        if (data.quoteText.length >= 150) {
             textQuote.classList.add("long-quote");
         } else {
             textQuote.classList.remove("long-quote");
